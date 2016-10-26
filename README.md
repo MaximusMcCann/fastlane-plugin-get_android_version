@@ -12,9 +12,19 @@ fastlane add_plugin get_android_version
 
 ## About get_android_version
 
-gets the android versionName and versionCode from manifest file
+Gets the android versionName and versionCode from the `AndroidManifest.xml` file located in the provided apk.
 
-**Note to author:** Add a more detailed description about this plugin here. If your plugin contains multiple actions, make sure to mention them here.
+Usage:
+
+```
+get_android_version(apk: "path/to/your/file.apk")
+```
+
+Sets these keys
+
+`GET_ANDROID_VERSION_NAME : String` = The versionName extracted from the apk's manifest file.
+
+`GET_ANDROID_VERSION_CODE : String` = The versionCode extracted from the apk's manifest file. Hex values are converted to int strings.
 
 ## Example
 
@@ -50,3 +60,7 @@ For more information about how the `fastlane` plugin system works, check out the
 ## About `fastlane`
 
 `fastlane` is the easiest way to automate beta deployments and releases for your iOS and Android apps. To learn more, check out [fastlane.tools](https://fastlane.tools).
+
+## Credit `apktools`
+
+https://github.com/devunwired/apktools
