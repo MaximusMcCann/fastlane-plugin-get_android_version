@@ -39,10 +39,10 @@ module Fastlane
           versionCode = versionCode.to_i(16)
         end
 
-        Actions.lane_context[SharedValues::GET_ANDROID_VERSION_NAME] = versionName
-        Actions.lane_context[SharedValues::GET_ANDROID_VERSION_CODE] = versionCode
+        Actions.lane_context[SharedValues::GET_ANDROID_VERSION_NAME] = "#{versionName}"
+        Actions.lane_context[SharedValues::GET_ANDROID_VERSION_CODE] = "#{versionCode}"
 
-        puts [versionName, versionCode]
+        UI.message("extracted versionName: #{versionName} & versionCode: #{versionCode}")
       end
 
       def self.description
