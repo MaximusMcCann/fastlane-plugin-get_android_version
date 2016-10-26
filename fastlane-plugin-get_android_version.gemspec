@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.author        = %q{MaximusMcCann}
   spec.email         = %q{mxmccann@gmail.com}
 
-  spec.summary       = %q{gets the android versionName and versionCode from manifest file}
+  spec.summary       = %q{gets the android versionName and versionCode from the `AndroidManifest.xml` file located in the provided apk}
   spec.homepage      = "https://github.com/MaximusMcCann/fastlane-plugin-get_android_version"
   spec.license       = "MIT"
 
