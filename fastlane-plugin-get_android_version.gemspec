@@ -17,7 +17,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  # spec.add_dependency 'your-dependency', '~> 1.0.0'
   spec.add_dependency 'apktools'
 
   spec.add_development_dependency 'pry'
