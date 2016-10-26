@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = %q{mxmccann@gmail.com}
 
   spec.summary       = %q{gets the android versionName and versionCode from manifest file}
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-get_android_version"
+  spec.homepage      = "https://github.com/MaximusMcCann/fastlane-plugin-get_android_version"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
