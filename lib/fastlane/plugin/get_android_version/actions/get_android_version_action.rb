@@ -33,7 +33,7 @@ module Fastlane
               end
             end
           elsif element.name == "application"
-            element.attributes.each.do |attr|
+            element.attributes.each do |attr|
               if attr.name == "label"
                 appName == attr.value
               end
