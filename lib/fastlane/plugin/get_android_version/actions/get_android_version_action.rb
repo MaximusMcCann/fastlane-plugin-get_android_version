@@ -82,7 +82,7 @@ module Fastlane
       def self.output
         [
           ['GET_ANDROID_VERSION_NAME', 'The versionName extracted from the apk\'s manifest file.'],
-          ['GET_ANDROID_VERSION_CODE', 'The versionCode extracted from the apk\'s manifest file. Hex values are converted to ints.']
+          ['GET_ANDROID_VERSION_CODE', 'The versionCode extracted from the apk\'s manifest file. Hex values are converted to ints.'],
           ['GET_ANDROID_VERSION_APP_NAME', 'The appNmae extracted from the apk\'s manifest file.']
         ]
       end
