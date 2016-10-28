@@ -3,6 +3,7 @@ module Fastlane
     module SharedValues
       GET_ANDROID_VERSION_NAME = :GET_ANDROID_VERSION_NAME
       GET_ANDROID_VERSION_CODE = :GET_ANDROID_VERSION_CODE
+      GET_ANDROID_VERSION_APP_NAME = :GET_ANDROID_VERSION_APP_NAME
     end
     class GetAndroidVersionAction < Action
       def self.run(params)
@@ -20,17 +21,22 @@ module Fastlane
 
         versionCode = nil
         versionName = nil
+        appName = nil
 
         elements.each do |element|
-          if element.name != "manifest"
-            next
-          end
-
-          element.attributes.each do |attr|
-            if attr.name == "versionCode"
-              versionCode = attr.value
-            elsif attr.name == "versionName"
-              versionName = attr.value
+          if element.name == "manifest"
+            element.attributes.each do |attr|
+              if attr.name == "versionCode"
+                versionCode = attr.value
+              elsif attr.name == "versionName"
+                versionName = attr.value
+              end
+            end
+          elsif element.name == "application"
+            element.attributes.each.do |attr|
+              if attr.name == "label"
+                appName == attr.value
+              end
             end
           end
         end
@@ -41,8 +47,9 @@ module Fastlane
 
         Actions.lane_context[SharedValues::GET_ANDROID_VERSION_NAME] = "#{versionName}"
         Actions.lane_context[SharedValues::GET_ANDROID_VERSION_CODE] = "#{versionCode}"
+        Actions.lane_context[SharedValues::GET_ANDROID_VERSION_APP_NAME] = "#{appName}"
 
-        UI.message("extracted versionName: #{versionName} & versionCode: #{versionCode}")
+        UI.message("extracted versionName: #{versionName} & versionCode: #{versionCode} & appName: #{appName}")
       end
 
       def self.description
@@ -76,6 +83,7 @@ module Fastlane
         [
           ['GET_ANDROID_VERSION_NAME', 'The versionName extracted from the apk\'s manifest file.'],
           ['GET_ANDROID_VERSION_CODE', 'The versionCode extracted from the apk\'s manifest file. Hex values are converted to ints.']
+          ['GET_ANDROID_VERSION_APP_NAME', 'The appNmae extracted from the apk\'s manifest file.']
         ]
       end
 
