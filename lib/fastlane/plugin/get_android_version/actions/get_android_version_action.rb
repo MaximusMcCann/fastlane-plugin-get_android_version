@@ -53,7 +53,7 @@ module Fastlane
       end
 
       def self.description
-        "gets the android versionName and versionCode from manifest file"
+        "gets the android versionName and versionCode and appName (label) from manifest file"
       end
 
       def self.authors
@@ -66,7 +66,7 @@ module Fastlane
 
       def self.details
         # Optional:
-        "gets the android versionName and versionCode from manifest file"
+        "gets the android versionName and versionCode and appName (label) from manifest file"
       end
 
       def self.available_options
