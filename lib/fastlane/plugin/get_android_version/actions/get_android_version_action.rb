@@ -53,7 +53,7 @@ module Fastlane
       end
 
       def self.description
-        "gets the android versionName and versionCode and appName (label) from manifest file"
+        "Gets the android versionName, versionCode and parsed appName (label) from AndroidManifest.xml file in provided apk"
       end
 
       def self.authors
@@ -66,7 +66,7 @@ module Fastlane
 
       def self.details
         # Optional:
-        "gets the android versionName and versionCode and appName (label) from manifest file"
+        "Gets the android versionName, versionCode and parsed appName (label) from AndroidManifest.xml file in provided apk"
       end
 
       def self.available_options
@@ -89,8 +89,6 @@ module Fastlane
 
       def self.is_supported?(platform)
         platform == :android
-        # Adjust this if your plugin only works for a particular platform (iOS vs. Android, for example)
-        # See: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
       end
     end
   end

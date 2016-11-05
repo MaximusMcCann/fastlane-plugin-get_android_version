@@ -12,7 +12,7 @@ fastlane add_plugin get_android_version
 
 ## About get_android_version
 
-Gets the android versionName, versionCode and appName (label) from the `AndroidManifest.xml` file located in the provided apk.
+Gets the android versionName, versionCode and parsed appName (label) from `AndroidManifest.xml` file in provided apk.
 
 Usage:
 
