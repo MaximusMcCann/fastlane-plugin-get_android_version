@@ -35,7 +35,7 @@ module Fastlane
           elsif element.name == "application"
             element.attributes.each do |attr|
               if attr.name == "label"
-                appName == attr.value
+                appName = attr.value
               end
             end
           end
@@ -49,6 +49,7 @@ module Fastlane
         Actions.lane_context[SharedValues::GET_ANDROID_VERSION_CODE] = "#{versionCode}"
         Actions.lane_context[SharedValues::GET_ANDROID_VERSION_APP_NAME] = "#{appName}"
 
+        UI.message("Data pulled from: #{apk_file}")
         UI.message("extracted versionName: #{versionName} & versionCode: #{versionCode} & appName: #{appName}")
       end
 
